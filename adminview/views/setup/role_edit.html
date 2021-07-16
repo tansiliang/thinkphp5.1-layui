@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/layui.css">
+    <link rel="stylesheet" href="/assets/css/view.css"/>
+    <title></title>
+    <style>
+      .layui-layer-title,.layui-view-body{
+        background-color: #fff;
+      }
+      .layui-content{
+        padding: 0;
+      }
+      .layui-card{
+        box-shadow:none;
+      }
+      .layui-form-item{
+        width: 50%;
+        margin: 15px auto 15px auto;
+      }
+    </style>
+</head>
+<body class="layui-view-body">
+    <div class="layui-content">
+        <div class="layui-row">
+            <div class="layui-card">
+                <form class="layui-form layui-card-body" lay-filter="roleeditform">
+                  <div class="layui-form-item">
+                    <label class="layui-form-label">角色名称</label>
+                    <div class="layui-input-block">
+                      <input type="text" name="role_name" id="role_name" required  lay-verify="required" placeholder="请输入角色名称" autocomplete="off" class="layui-input">
+                    </div>
+                  </div>
+
+                  <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">角色描述</label>
+                    <div class="layui-input-block">
+                      <textarea name="role_dec" id="role_dec" placeholder="请输入角色描述内容" class="layui-textarea"></textarea>
+                    </div>
+                  </div>
+                  
+                  <div class="layui-form-item">
+                    <label class="layui-form-label">状态</label>
+                    <div class="layui-input-block">
+                      <input type="radio" name="role_status" id="status0" value="0" title="禁用">
+                      <input type="radio" name="role_status" id="status1" value="1" title="开启" checked>
+                    </div>
+                  </div>
+                  <input  type="hidden" id="id" name="id" value="" />
+                  
+                  <div class="layui-form-item">
+                    <div class="layui-input-block">
+                      <button class="layui-btn layui-btn-blue" lay-submit lay-filter="roleeditform">立即保存</button>
+                      <button type="reset" id="returnclosepage" class="layui-btn layui-btn-primary">返回</button>
+                    </div>
+                  </div>
+                </form>  
+            </div>
+        </div>
+    </div>
+    <script src="/assets/layui.js"></script>
+    <script src="/index.js" data-main="threesetinfo" ></script>
+</body>
+</html>

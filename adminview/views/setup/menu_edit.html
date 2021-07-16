@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/layui.css">
+    <link rel="stylesheet" href="/assets/css/view.css"/>
+    <title></title>
+    <style>
+      .addinfoclass{
+        background-color: #fff;
+      }
+      .layui-layer-title,.layui-view-body{
+        background-color: #fff;
+      }
+      .layui-content{
+        padding: 0;
+      }
+      .layui-card{
+        box-shadow:none;
+      }
+      .layui-form-item{
+        width: 50%;
+        margin: 15px auto 15px auto;
+      }
+    </style>
+</head>
+<body class="layui-view-body">
+    <div class="layui-content">
+        <div class="layui-row">
+            <div class="layui-card">
+                <form class="layui-form layui-card-body" lay-filter="menueditdata">
+                  <div class="layui-form-item">
+                    <label class="layui-form-label">菜单名称</label>
+                    <div class="layui-input-block">
+                      <input type="text" name="title" required  lay-verify="required" placeholder="请输入菜单名称" autocomplete="off" class="layui-input">
+                    </div>
+                  </div>
+                  <div class="layui-form-item">
+                    <label class="layui-form-label">菜单地址</label>
+                    <div class="layui-input-block">
+                      <input type="text" name="jump" required  lay-verify="required" placeholder="请输入菜单地址如：(admin/index.html)" autocomplete="off" class="layui-input">
+                    </div>
+                  </div>
+                  <div class="layui-form-item">
+                    <label class="layui-form-label">图标icon</label>
+                    <div class="layui-input-block">
+                      <input type="text" name="icon" placeholder="请输入图标icon,如：(`& #xe68c;`)" autocomplete="off" class="layui-input">
+                    </div>
+                    <!-- <div class="layui-form-mid layui-word-aux"><a href="https://www.layui.com/doc/element/icon.html">点击查找icon</a></div> -->
+                  </div>
+                  <div class="layui-form-item">
+                    <label class="layui-form-label">状态</label>
+                    <div class="layui-input-block" id="roleinfo">
+                      <input type="radio" name="starts" value="1" title="开启" checked>
+                      <input type="radio" name="starts" value="0" title="禁用">
+                    </div>
+                  </div>
+                  <div class="layui-form-item">
+                    <label class="layui-form-label">上级菜单</label>
+                    <div class="layui-input-block">
+                      <select name="p_id" id="pidinfo" lay-verify="required">
+                        <!-- <option value="1">正常</option>
+                        <option value="0">禁用</option> -->
+                      </select>
+                    </div>
+                  </div>
+                  <input type="hidden" name="id" id="id" value="" />
+                  <div class="layui-form-item">
+                    <div class="layui-input-block">
+                      <button class="layui-btn layui-btn-blue" lay-submit lay-filter="menueditform">立即提交</button>
+                      <button type="reset" id="returnclosepage" class="layui-btn layui-btn-primary">返回</button>
+                    </div>
+                  </div>
+                </form>  
+            </div>
+        </div>
+    </div>
+    <script src="/assets/layui.js"></script>
+    <script src="/index.js" data-main="threesetinfo" ></script>
+</body>
+</html>
