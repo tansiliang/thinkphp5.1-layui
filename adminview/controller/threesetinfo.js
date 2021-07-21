@@ -377,7 +377,7 @@ layui.define(['element', 'layer', 'http', 'table', 'form', "tree", "util"], func
                 console.log(res)
                 var data = res.data
                 if (res.code == 200) {
-                    var html = '';
+                    var html = '<option value="0">一级菜单</option>';
                     for(var i in data){
                         html += '<option value="'+data[i].id+'">'+data[i].title+'</option>';
                     }
